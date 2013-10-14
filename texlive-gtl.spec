@@ -5,7 +5,7 @@
 # catalog-license undef
 # catalog-version undef
 Name:		texlive-gtl
-Version:	20131012
+Version:	20131014
 Release:	1
 Summary:	TeXLive gtl package
 Group:		Publishing
