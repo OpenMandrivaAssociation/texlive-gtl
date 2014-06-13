@@ -6,7 +6,7 @@
 # catalog-version undef
 Name:		texlive-gtl
 Version:	20131014
-Release:	5
+Release:	6
 Summary:	TeXLive gtl package
 Group:		Publishing
 URL:		http://tug.org/texlive
