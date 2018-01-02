@@ -1,12 +1,6 @@
-# revision 31306
-# category Package
-# catalog-ctan undef
-# catalog-date undef
-# catalog-license undef
-# catalog-version undef
 Name:		texlive-gtl
-Version:	20131014
-Release:	9
+Version:	0.3
+Release:	1
 Summary:	TeXLive gtl package
 Group:		Publishing
 URL:		http://tug.org/texlive
@@ -32,12 +26,10 @@ TeXLive gtl package.
 
 #-----------------------------------------------------------------------
 %files
-%{_texmfdistdir}/tex/latex/gtl/gtl.sty
-%doc %{_texmfdistdir}/doc/latex/gtl/README
-%doc %{_texmfdistdir}/doc/latex/gtl/gtl.pdf
+%{_texmfdistdir}/tex/generic/gtl
+%doc %{_texmfdistdir}/doc/generic/gtl
 #- source
-%doc %{_texmfdistdir}/source/latex/gtl/gtl.dtx
-%doc %{_texmfdistdir}/source/latex/gtl/gtl.ins
+%doc %{_texmfdistdir}/source/generic/gtl
 
 #-----------------------------------------------------------------------
 %prep
