@@ -1,6 +1,6 @@
 Name:		texlive-gtl
-Version:	49527
-Release:	2
+Version:	69297
+Release:	1
 Summary:	TeXLive gtl package
 Group:		Publishing
 URL:		http://tug.org/texlive
