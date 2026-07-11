@@ -1,43 +1,24 @@
-Name:		texlive-gtl
-Version:	69297
-Release:	1
-Summary:	TeXLive gtl package
+%global tl_name gtl
+%global tl_revision 69297
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	0.6
+Release:	%{tl_revision}.1
+Summary:	Manipulating generalized token lists
 Group:		Publishing
-URL:		https://tug.org/texlive
-License:	http://www.tug.org/texlive/LICENSE.TL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/gtl.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/gtl.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/gtl.source.r%{version}.tar.xz
+URL:		https://www.ctan.org/tex-archive/macros/generic/gtl
+License:	lppl1.3c
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/gtl.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/gtl.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/gtl.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-TeXLive gtl package.
+The package provides tools for simple operations on lists of tokens
+which are not necessarily balanced. It is in particular used a lot in
+the unravel package, to go through tokens one at a time rather than
+having to work with entire braced groups at a time.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/tex/generic/gtl
-%doc %{_texmfdistdir}/doc/generic/gtl
-#- source
-%doc %{_texmfdistdir}/source/generic/gtl
-
-#-----------------------------------------------------------------------
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
